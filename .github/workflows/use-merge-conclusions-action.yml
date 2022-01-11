@@ -14,7 +14,8 @@ jobs:
           - c
       fail-fast: false
     steps:
-      - run: "true"
+      - run: |
+         [ ${{ matrix.x }} = "a" ]
   check:
     if: always() && github.event.pull_request
     needs: test
