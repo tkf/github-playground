@@ -20,6 +20,6 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
-      - uses: tkf/merge-conclusions-action@main
+      - uses: tkf/merge-conclusions-action@86cdea3433003c92fb0806539fbd8322927a7f99
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
