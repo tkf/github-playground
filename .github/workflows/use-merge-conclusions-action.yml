@@ -1,0 +1,23 @@
+name: Use tkf/merge-conclusions-action
+
+on:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        x:
+          - a
+          - b
+          - c
+      fail-fast: false
+    steps:
+      - run: "true"
+  check:
+    if: always() && github.event.pull_request
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: tkf/merge-conclusions-action@main
